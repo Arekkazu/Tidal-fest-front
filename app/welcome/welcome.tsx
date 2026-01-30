@@ -67,7 +67,7 @@ export function Welcome() {
               letterSpacing: "-0.03em",
             }}
           >
-            TIDALFEST
+            FESTIDAL
           </h1>
           <div className="flex items-center justify-center gap-2 mb-6">
             <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />

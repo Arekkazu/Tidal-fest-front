@@ -10,16 +10,77 @@ import { LoadingScreen } from "../components/festival/LoadingScreen";
 import { ErrorScreen } from "../components/festival/ErrorScreen";
 import { ThemeSelector } from "../components/festival/ThemeSelector";
 import { FestivalPoster } from "../components/festival/FestivalPoster";
+import { isRouteErrorResponse, Link } from "react-router";
 
 // Loader simple para obtener el ID
 export async function loader({ params }: Route.LoaderArgs) {
   const { id } = params;
 
   if (!id) {
-    throw new Response("Festival ID not found", { status: 404 });
+    throw new Response("Festival ID no encontrado", { status: 404 });
   }
 
   return { festivalId: id };
+}
+
+// ErrorBoundary para manejar errores de routing y carga
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  let errorMessage = "Algo salió mal";
+  let errorDetails = "";
+  let statusCode = 500;
+
+  if (isRouteErrorResponse(error)) {
+    statusCode = error.status;
+    errorMessage =
+      error.status === 404
+        ? "Festival no encontrado"
+        : "Error al cargar el festival";
+    errorDetails = error.data?.message || error.statusText || "";
+  } else if (error instanceof Error) {
+    errorMessage = "Error inesperado";
+    errorDetails = error.message;
+  }
+
+  return (
+    <div
+      className="min-h-screen flex items-center justify-center p-4"
+      style={{
+        background:
+          "linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f172a 100%)",
+      }}
+    >
+      <div className="max-w-2xl w-full text-center">
+        <div className="mb-8">
+          <h1 className="text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-pink-500 to-purple-600 mb-4">
+            {statusCode}
+          </h1>
+          <h2 className="text-3xl font-bold text-white mb-4">{errorMessage}</h2>
+          {errorDetails && (
+            <p className="text-slate-400 text-lg mb-8">{errorDetails}</p>
+          )}
+        </div>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link
+            to="/"
+            className="px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 hover:scale-105 hover:shadow-xl"
+            style={{
+              background: "linear-gradient(135deg, #06b6d4, #8b5cf6)",
+              color: "white",
+            }}
+          >
+            Volver al Inicio
+          </Link>
+          <button
+            onClick={() => window.location.reload()}
+            className="px-8 py-4 rounded-xl font-bold text-lg border-2 border-slate-700 text-slate-300 hover:border-slate-500 hover:text-white transition-all duration-300"
+          >
+            Reintentar
+          </button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default function FestivalApp({ loaderData }: Route.ComponentProps) {

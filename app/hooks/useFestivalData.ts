@@ -25,6 +25,13 @@ export function useFestivalData(festivalId: string) {
 
   // Función para cargar datos
   const fetchFestival = useCallback(async () => {
+    // Validar que festivalId no sea undefined o vacío
+    if (!festivalId || festivalId === "undefined") {
+      setError("ID de festival inválido");
+      setLoading(false);
+      return;
+    }
+
     try {
       setLoading(true);
       setError(null);
