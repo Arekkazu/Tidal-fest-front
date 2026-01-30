@@ -105,21 +105,3 @@ app/
 ├── welcome/          # Landing page
 └── env.d.ts          # Tipos de variables de entorno
 ```
-
-## 🤝 Contribuir
-
-Las contribuciones son bienvenidas! Por favor:
-
-1. Fork el proyecto
-2. Crea una rama (`git checkout -b feature/increible-feature`)
-3. Commit tus cambios (`git commit -m 'Add: increible feature'`)
-4. Push a la rama (`git push origin feature/increible-feature`)
-5. Abre un Pull Request
-
-## 📝 Licencia
-
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
-
----
-
-Hecho con 💙 y mucha música
