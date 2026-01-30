@@ -5,6 +5,7 @@
 ![TidalFest Banner](https://img.shields.io/badge/Tidal-00D4FF?style=for-the-badge&logo=tidal&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)
 
 **TidalFest** genera un cartel de festival único basado en tus artistas favoritos, reproducciones y gustos musicales de Tidal. Conecta tu cuenta y descubre tu lineup perfecto en segundos.
 
@@ -14,15 +15,14 @@
 - 🎧 **Integración con Tidal**: Conexión segura mediante OAuth
 - 📱 **Responsive**: Diseño adaptado a móviles, tablets y desktop
 - 📥 **Descargable**: Exporta tu cartel como imagen para compartir
-- ⚡ **Rápido**: Resultados instantáneos
 
 ## 🚀 Inicio Rápido
 
 ### Prerrequisitos
 
-- Node.js 20+
+- [Bun](https://bun.sh/) 1.0+ (recomendado) o Node.js 20+ con npm/pnpm
 - Cuenta de Tidal
-- Backend de TidalFest corriendo (ver configuración)
+- Backend de TidalFest corriendo
 
 ### Instalación
 
@@ -31,8 +31,12 @@
 git clone https://github.com/tu-usuario/tidal-fest-front.git
 cd tidal-fest-front
 
-# Instalar dependencias
-npm install
+# Instalar dependencias con Bun (recomendado)
+bun install
+
+# O si prefieres npm/pnpm
+# npm install
+# pnpm install
 
 # Configurar variables de entorno
 cp .env.example .env
@@ -42,7 +46,12 @@ cp .env.example .env
 ### Desarrollo
 
 ```bash
-npm run dev
+# Con Bun (recomendado - más rápido)
+bun run dev
+
+# O con npm/pnpm
+# npm run dev
+# pnpm run dev
 ```
 
 Abre [http://localhost:5173](http://localhost:5173) en tu navegador.
@@ -57,22 +66,32 @@ VITE_API_URL=http://localhost:3000
 
 Para producción, ajusta la URL a tu servidor backend.
 
-## 🏗️ Build
+## 🏗️ Build para Producción
 
 ```bash
-# Compilar para producción
-npm run build
+# Con Bun (recomendado)
+bun run build
+bun run start
 
-# Servir build localmente
-npm run start
+# O con npm/pnpm
+# npm run build
+# npm run start
+```
+
+### Variables de entorno en producción
+
+```bash
+# Setear la URL del backend antes del build
+VITE_API_URL=https://tu-api-produccion.com bun run build
 ```
 
 ## 🛠️ Stack Tecnológico
 
 - **React Router 7** - Framework full-stack
-- **TypeScript** - Type safety
+- **TypeScript** - Tipado estático
 - **TailwindCSS 4** - Estilos
-- **Vite** - Build tool
+- **Vite** - Build tool ultrarrápido
+- **Bun** - Runtime y package manager
 - **html-to-image** - Exportación de carteles
 
 ## 📂 Estructura del Proyecto
