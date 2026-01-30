@@ -5,7 +5,7 @@ import { LineupSection } from "./LineupSection";
 type FestivalPosterProps = {
   festivalData: FestivalResponse;
   theme: Theme;
-  posterRef: React.RefObject<HTMLDivElement>;
+  posterRef: React.RefObject<HTMLDivElement | null>;
 };
 
 export function FestivalPoster({
