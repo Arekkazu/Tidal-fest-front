@@ -3,8 +3,12 @@ import { Welcome } from "../welcome/welcome";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "New React Router App" },
-    { name: "description", content: "Welcome to React Router!" },
+    { title: "TidalFest - Tu Festival Personalizado" },
+    {
+      name: "description",
+      content:
+        "Conecta tu cuenta de Tidal y descubre tu lineup de festival personalizado basado en tus gustos musicales.",
+    },
   ];
 }
 
