@@ -238,57 +238,6 @@ export function Welcome() {
               <span>Conexión segura · No guardamos tu contraseña</span>
             </div>
           </div>
-
-          {/* Features */}
-          <div className="mt-16 sm:mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-3xl mx-auto">
-            <div className="bg-slate-900/30 backdrop-blur-sm border border-slate-800 rounded-xl p-5 sm:p-6 hover:border-sky-500/50 transition-all">
-              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-to-br from-sky-400 to-blue-500 flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-white font-bold text-base sm:text-lg mb-2">
-                Personalizado
-              </h3>
-              <p className="text-slate-400 text-xs sm:text-sm">
-                Basado en tus gustos y reproducciones reales
-              </p>
-            </div>
-
-            <div className="bg-slate-900/30 backdrop-blur-sm border border-slate-800 rounded-xl p-5 sm:p-6 hover:border-purple-500/50 transition-all">
-              <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-white"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-white font-bold text-base sm:text-lg mb-2">
-                Comparte
-              </h3>
-              <p className="text-slate-400 text-xs sm:text-sm">
-                Descarga tu cartel y compártelo con amigos
-              </p>
-            </div>
-          </div>
         </div>
 
         {/* CSS Animations */}

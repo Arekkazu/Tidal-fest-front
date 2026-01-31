@@ -15,7 +15,7 @@ export function LineupSection({
   theme,
 }: LineupSectionProps) {
   return (
-    <section className="flex-1 w-full flex flex-col justify-center py-8 sm:py-10 md:py-12 px-6 sm:px-8">
+    <section className="flex-1 w-full flex flex-col justify-center py-8 sm:py-10 md:py-12 px-4 sm:px-6 md:px-8">
       <div className="flex flex-col items-center gap-3 sm:gap-4">
         {/* HEADLINERS - Grande y bold */}
         {headliners.length > 0 && (
@@ -24,7 +24,12 @@ export function LineupSection({
               <div
                 key={artist.name}
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tighter px-2"
-                style={{ color: theme.text }}
+                style={{
+                  color: theme.text,
+                  wordBreak: "break-word",
+                  overflowWrap: "break-word",
+                  hyphens: "auto",
+                }}
                 title={artist.name}
               >
                 {artist.name.toUpperCase()}
@@ -46,17 +51,21 @@ export function LineupSection({
         {/* SPECIAL GUESTS - Mediano */}
         {specialGuests.length > 0 && (
           <div
-            className="text-center leading-relaxed max-w-full px-2"
-            style={{ color: theme.text, opacity: 0.95 }}
+            className="text-center leading-relaxed max-w-full px-2 flex flex-wrap justify-center items-center gap-x-2 sm:gap-x-3 gap-y-1"
+            style={{
+              color: theme.text,
+              opacity: 0.95,
+              wordBreak: "break-word",
+            }}
           >
             {specialGuests.map((artist, i) => (
               <React.Fragment key={artist.name}>
-                <span className="text-lg sm:text-xl md:text-2xl font-bold">
+                <span className="text-lg sm:text-xl md:text-2xl font-bold whitespace-nowrap">
                   {artist.name.toUpperCase()}
                 </span>
                 {i < specialGuests.length - 1 && (
                   <span
-                    className="mx-2 sm:mx-3"
+                    className="text-lg sm:text-xl"
                     style={{ color: theme.accent }}
                   >
                     •
@@ -80,16 +89,20 @@ export function LineupSection({
         {/* UNDERCARD - Pequeño */}
         {undercard.length > 0 && (
           <div
-            className="text-center leading-relaxed max-w-full px-2"
-            style={{ color: theme.text, opacity: 0.85 }}
+            className="text-center leading-relaxed max-w-full px-2 flex flex-wrap justify-center items-center gap-x-2 gap-y-1"
+            style={{
+              color: theme.text,
+              opacity: 0.85,
+              wordBreak: "break-word",
+            }}
           >
             {undercard.map((artist, i) => (
               <React.Fragment key={artist.name}>
-                <span className="text-sm sm:text-base md:text-lg font-semibold">
+                <span className="text-sm sm:text-base md:text-lg font-semibold whitespace-nowrap">
                   {artist.name.toUpperCase()}
                 </span>
                 {i < undercard.length - 1 && (
-                  <span className="mx-2 text-slate-500">•</span>
+                  <span className="text-sm sm:text-base text-slate-500">•</span>
                 )}
               </React.Fragment>
             ))}
