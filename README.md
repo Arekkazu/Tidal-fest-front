@@ -7,7 +7,11 @@
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Bun](https://img.shields.io/badge/Bun-000000?style=for-the-badge&logo=bun&logoColor=white)
 
-**TidalFest** genera un cartel de festival único basado en tus artistas favoritos, reproducciones y gustos musicales de Tidal. Conecta tu cuenta y descubre tu lineup perfecto en segundos.
+**TidalFest** genera un cartel de festival único basado en tus artistas favoritos, reproducciones y gustos musicales de Tidal. Conecta tu cuenta y descubre tu lineup perfecto.
+
+Pruebalo aqui:
+
+https://tidalfest.vercel.app/
 
 ## ✨ Características
 
@@ -105,3 +109,6 @@ app/
 ├── welcome/          # Landing page
 └── env.d.ts          # Tipos de variables de entorno
 ```
+## To Do:
+1. Internacionalizacion (i18n) []
+2. Redireccionamiento en excepciones del servidor []
