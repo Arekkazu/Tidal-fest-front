@@ -1,0 +1,60 @@
+{
+  "welcome": {
+    "dialog": {
+      "title": "Welcome to TidalFest!",
+      "description1": "This is a",
+      "description1_highlight": "personal project",
+      "description1_end": "created with passion.",
+      "description2": "Analyzing your collection may",
+      "description2_highlight": "take several minutes",
+      "description2_end": "depending on the size of your Tidal library.",
+      "description3": "Please be patient and enjoy the result! 🎵",
+      "wait": "Wait {{seconds}}s...",
+      "understood": "Got it!"
+    },
+    "title": "TidalFest",
+    "subtitle": "Your Personalized Festival",
+    "description1": "Connect your",
+    "description1_highlight": "Tidal",
+    "description1_end": "account and discover your perfect lineup.",
+    "description2": "We generate a unique festival poster based on your favorite artists, plays, and musical tastes.",
+    "loginButton": "Sign In with Tidal",
+    "securityBadge": "Secure connection · We don't store your password"
+  },
+  "festival": {
+    "loading": {
+      "title": "Creating your Festival...",
+      "analyzing": "Analyzing your favorite music",
+      "artists": "Discovering artists",
+      "generating": "Generating the perfect poster",
+      "almostReady": "Almost ready...",
+      "wait": "This process may take several minutes depending on your collection size"
+    },
+    "error": {
+      "title": "Oops! Something went wrong",
+      "notFound": "We couldn't find your festival",
+      "description": "There was a problem loading your festival. Please try again.",
+      "retry": "Try again",
+      "backHome": "Back to home"
+    },
+    "theme": {
+      "label": "Theme",
+      "oceanBreeze": "Ocean Breeze",
+      "sunsetVibes": "Sunset Vibes",
+      "neonNights": "Neon Nights",
+      "forestGrove": "Forest Grove",
+      "retroWave": "Retro Wave"
+    },
+    "actions": {
+      "download": "Download Image",
+      "share": "Share"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "close": "Close",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  }
+}

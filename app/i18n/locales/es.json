@@ -1,0 +1,60 @@
+{
+  "welcome": {
+    "dialog": {
+      "title": "¡Bienvenido a TidalFest!",
+      "description1": "Este es un",
+      "description1_highlight": "proyecto personal",
+      "description1_end": "creado con pasión.",
+      "description2": "El análisis de tu colección puede",
+      "description2_highlight": "tomar varios minutos",
+      "description2_end": "dependiendo del tamaño de tu biblioteca en Tidal.",
+      "description3": "Por favor, ten paciencia y ¡disfruta el resultado! 🎵",
+      "wait": "Espera {{seconds}}s...",
+      "understood": "¡Entendido!"
+    },
+    "title": "TidalFest",
+    "subtitle": "Tu Festival Personalizado",
+    "description1": "Conecta tu cuenta de",
+    "description1_highlight": "Tidal",
+    "description1_end": "y descubre tu lineup perfecto.",
+    "description2": "Generamos un cartel de festival único basado en tus artistas favoritos, reproducciones y gustos musicales.",
+    "loginButton": "Iniciar Sesión con Tidal",
+    "securityBadge": "Conexión segura · No guardamos tu contraseña"
+  },
+  "festival": {
+    "loading": {
+      "title": "Creando tu Festival...",
+      "analyzing": "Analizando tu música favorita",
+      "artists": "Descubriendo artistas",
+      "generating": "Generando el cartel perfecto",
+      "almostReady": "Casi listo...",
+      "wait": "Este proceso puede tomar varios minutos dependiendo del tamaño de tu colección"
+    },
+    "error": {
+      "title": "¡Ups! Algo salió mal",
+      "notFound": "No pudimos encontrar tu festival",
+      "description": "Hubo un problema al cargar tu festival. Por favor, intenta nuevamente.",
+      "retry": "Intentar de nuevo",
+      "backHome": "Volver al inicio"
+    },
+    "theme": {
+      "label": "Tema",
+      "oceanBreeze": "Ocean Breeze",
+      "sunsetVibes": "Sunset Vibes",
+      "neonNights": "Neon Nights",
+      "forestGrove": "Forest Grove",
+      "retroWave": "Retro Wave"
+    },
+    "actions": {
+      "download": "Descargar Imagen",
+      "share": "Compartir"
+    }
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "close": "Cerrar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar"
+  }
+}

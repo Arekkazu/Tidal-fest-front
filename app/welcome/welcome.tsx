@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { API_URL } from "../constants/festival.constants";
+import { useTranslation } from "react-i18next";
+import { LanguageSelector } from "../components/LanguageSelector";
 
 const redirectTidal = () => {
   console.log("Redirecting to Tidal...");
@@ -9,6 +11,7 @@ const redirectTidal = () => {
 export function Welcome() {
   const [showDialog, setShowDialog] = useState(true);
   const [countdown, setCountdown] = useState(3);
+  const { t } = useTranslation();
 
   useEffect(() => {
     if (countdown > 0) {
@@ -29,6 +32,9 @@ export function Welcome() {
       {showDialog && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
           <div className="bg-slate-900 border-2 border-sky-500/50 rounded-2xl p-6 sm:p-8 max-w-md w-full shadow-2xl transform transition-all">
+            <div className="absolute top-2 right-2">
+              <LanguageSelector />
+            </div>
             <div className="flex items-center justify-center mb-4">
               <div className="w-16 h-16 rounded-full bg-gradient-to-br from-sky-400 to-purple-500 flex items-center justify-center">
                 <svg
@@ -48,26 +54,26 @@ export function Welcome() {
             </div>
 
             <h2 className="text-2xl sm:text-3xl font-bold text-white text-center mb-4">
-              ¡Bienvenido a Festidal!
+              {t("welcome.dialog.title")}
             </h2>
 
             <div className="space-y-3 text-slate-300 text-sm sm:text-base mb-6">
               <p className="text-center">
-                Este es un{" "}
+                {t("welcome.dialog.description1")}{" "}
                 <span className="text-sky-400 font-semibold">
-                  proyecto personal
+                  {t("welcome.dialog.description1_highlight")}
                 </span>{" "}
-                creado con pasión.
+                {t("welcome.dialog.description1_end")}
               </p>
               <p className="text-center">
-                El análisis de tu colección puede{" "}
+                {t("welcome.dialog.description2")}{" "}
                 <span className="text-purple-400 font-semibold">
-                  tomar varios minutos
+                  {t("welcome.dialog.description2_highlight")}
                 </span>{" "}
-                dependiendo del tamaño de tu biblioteca en Tidal.
+                {t("welcome.dialog.description2_end")}
               </p>
               <p className="text-center text-slate-400 text-sm">
-                Por favor, ten paciencia y ¡disfruta el resultado! 🎵
+                {t("welcome.dialog.description3")}
               </p>
             </div>
 
@@ -80,7 +86,9 @@ export function Welcome() {
                   : "bg-gradient-to-r from-sky-500 to-purple-500 text-white hover:scale-105 hover:shadow-lg"
               }`}
             >
-              {countdown > 0 ? `Espera ${countdown}s...` : "¡Entendido!"}
+              {countdown > 0
+                ? t("welcome.dialog.wait", { seconds: countdown })
+                : t("welcome.dialog.understood")}
             </button>
           </div>
         </div>
@@ -93,6 +101,7 @@ export function Welcome() {
             "linear-gradient(135deg, #0a0a0f 0%, #1a1a2e 50%, #0f172a 100%)",
         }}
       >
+        <LanguageSelector />
         {/* Animated background elements */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div
@@ -145,12 +154,12 @@ export function Welcome() {
                 letterSpacing: "-0.03em",
               }}
             >
-              FESTIDAL
+              TidalFest
             </h1>
             <div className="flex items-center justify-center gap-2 mb-6">
               <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
               <p className="text-slate-300 text-lg sm:text-xl md:text-2xl font-medium tracking-wide">
-                Tu Festival Personalizado
+                {t("welcome.subtitle")}
               </p>
               <div className="h-px w-12 sm:w-16 bg-gradient-to-r from-transparent via-sky-400 to-transparent" />
             </div>
@@ -159,13 +168,14 @@ export function Welcome() {
           {/* Description */}
           <div className="max-w-2xl mx-auto mb-10 sm:mb-12">
             <p className="text-slate-400 text-base sm:text-lg md:text-xl leading-relaxed mb-4">
-              Conecta tu cuenta de{" "}
-              <span className="text-sky-400 font-semibold">Tidal</span> y
-              descubre tu lineup perfecto.
+              {t("welcome.description1")}{" "}
+              <span className="text-sky-400 font-semibold">
+                {t("welcome.description1_highlight")}
+              </span>{" "}
+              {t("welcome.description1_end")}
             </p>
             <p className="text-slate-500 text-sm sm:text-base">
-              Generamos un cartel de festival único basado en tus artistas
-              favoritos, reproducciones y gustos musicales.
+              {t("welcome.description2")}
             </p>
           </div>
 
@@ -201,7 +211,7 @@ export function Welcome() {
               </svg>
 
               <span className="relative z-10 text-white">
-                Iniciar Sesión con Tidal
+                {t("welcome.loginButton")}
               </span>
 
               {/* Arrow icon */}
@@ -235,7 +245,7 @@ export function Welcome() {
                   d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
                 />
               </svg>
-              <span>Conexión segura · No guardamos tu contraseña</span>
+              <span>{t("welcome.securityBadge")}</span>
             </div>
           </div>
         </div>

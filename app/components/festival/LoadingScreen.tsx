@@ -42,7 +42,7 @@ export function LoadingScreen({ message }: LoadingScreenProps) {
               letterSpacing: "-0.025em",
             }}
           >
-            Festidal
+            TidalFest
           </h1>
         </div>
 

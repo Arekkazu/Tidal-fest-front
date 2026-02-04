@@ -51,7 +51,7 @@ export function FestivalPoster({
             className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight"
             style={{ color: theme.text, letterSpacing: "-0.02em" }}
           >
-            FESTIDAL
+            TidalFest
           </h1>
           <div
             className="w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full"
