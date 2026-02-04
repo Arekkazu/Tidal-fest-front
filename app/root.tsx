@@ -9,7 +9,8 @@ import {
 
 import type { Route } from "./+types/root";
 import "./app.css";
-import "./i18n/config";
+import i18n from "./i18n/config";
+import { I18nextProvider } from "react-i18next";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -30,7 +31,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="google-site-verification" content="z94w7dPw8PNqD9YmkX14ozh3RZnqbT8cfCSjIzXEjXg" />
+        <meta
+          name="google-site-verification"
+          content="z94w7dPw8PNqD9YmkX14ozh3RZnqbT8cfCSjIzXEjXg"
+        />
         <Meta />
         <Links />
       </head>
@@ -44,7 +48,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <I18nextProvider i18n={i18n}>
+      <Outlet />
+    </I18nextProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
